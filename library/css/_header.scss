@@ -1,0 +1,117 @@
+.hide-text {
+    // Kellum method: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Defined by branding guidelines, Section 2, Typography, Web */
+/* Be careful when changing */
+$accent_color: #D2BA39;
+
+/* Used in _menu.scss to draw the selected item triangle. */
+$sub_menu_background_color: #525252;
+
+a {
+    color: $accent_color;
+    text-decoration: none;
+}
+
+.button {
+    @extend .pure-button;
+    color: #fff;
+    background: $accent_color;
+}
+
+ul.page-numbers {
+    @extend .pure-paginator;
+}
+
+a.page-numbers,
+span.page-numbers {
+    @extend .button;
+    &.next, &.prev {
+        /* override _pure.scss */
+        color: lighten($accent_color, 30);
+        text-shadow: none;
+    }
+}
+
+span.page-numbers.current {
+    @extend .pure-button-active;
+}
+
+#logo a {
+    background: url('../library/images/logo.png') no-repeat center center;
+    width: 210px;
+    display: block;
+    overflow: hidden;
+    float: left;
+    padding: 28px 0 0 0;
+    height: 0 !important;
+    height /**/: 28px;
+    position: relative;
+    bottom: 6px;
+}
+
+.lt-ie7 #logo a {
+    font-size: 0;
+    color: #fff;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    #logo a {
+        background: url("../library/images/logo@2x.png") no-repeat center center;
+        background-size: 210px 28px;
+    }
+}
+
+#inner-header {
+	.top-nav {
+		text-transform: uppercase;
+	}
+    border-bottom: 1px solid $sub_menu_background_color;
+    margin-bottom: 1em;
+}
+
+.wrap {
+    padding: 0 2em;
+    max-width: 976px;
+    margin-left: auto;
+    margin-right: auto;
+    &.pure-menu {
+        /* no extra padding for the menu */
+        padding: 0;
+    }
+}
+
+/*
+The content `<div>` is where all your content goes.
+*/
+#content {
+    margin: 0;
+    margin-bottom: 2em;
+}
+
+@media (max-width: 767px) {
+    #logo {
+        padding: 0;
+        float: none;
+    }
+
+    /* disable wrap padding */
+    .wrap {
+        padding: 0;
+    }
+
+    /* but keep it for the content */
+    #content {
+        padding: 0 2em;
+        margin-bottom: 1em;
+    }
+
+    #logo a {
+        /* left margin should equal right margin of pure-menu-link */
+        margin: 0 0 0 2em;
+    }
+}

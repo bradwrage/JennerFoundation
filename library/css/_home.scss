@@ -1,0 +1,32 @@
+.home-g {
+    @extend .pure-g;
+    max-width: 976px;
+}
+
+.home-u {
+    @extend .pure-u-1-4;
+}
+
+.home-inner-u {
+    padding: .25em;
+}
+
+.home-u:first-child .home-inner-u {
+    padding-left: 0;
+}
+
+.home-u:last-child .home-inner-u {
+    padding-right: 0;
+}
+
+.home .post a {
+    color: #000;
+}
+
+.home h1 {
+    font-size: 3em;
+}
+
+.home-h2 {
+    @extend h2;
+}
